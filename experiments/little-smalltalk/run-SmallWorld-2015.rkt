@@ -214,6 +214,7 @@
                              (slotAt block 9)))]
          [34 (VM-nil vm)] ;; "thread kill"
          [35 (push-and-continue ctx)]
+         [36 (push-and-continue (pop-multiple! low))]
 
          [_ (define args (pop-multiple! low))
             (define handler (hash-ref *primitive-handlers* primitive-number))
